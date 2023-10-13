@@ -1,4 +1,5 @@
 ﻿@model IList<Menu>
+@using startup.Utilities
 
 
 <div class="container-fluid position-relative p-0">
@@ -13,11 +14,17 @@
             <div class="navbar-nav ms-auto py-0">
                 @foreach (var menu in Model.Where(m => m.Levels == 1).OrderBy(n => n.MenuOrder))
                 {
+
                     var Pid = menu.MenuID;
+                    string url = Functions.TitleSlugGeneration("list", menu.MenuName, menu.MenuID);
+                    if (!string.IsNullOrEmpty(menu.Link))
+                    {
+                        url = menu.Link;
+                    }
                     var Smenu = Model.Where(p => p.ParentID == Pid).OrderBy(p => p.MenuOrder).ToList();
                     @if (Smenu.Count == 0)
                     {
-                        <a href="index.html" class="nav-item nav-link">@menu.MenuName</a>
+                        <a href="/@url" class="nav-item nav-link">@menu.MenuName</a>
                     }
                     else
                     {
@@ -26,7 +33,12 @@
                             <div class=" dropdown-menu m-0">
                                 @foreach (var smn in Smenu)
                                 {
-                                    <a href="blog.html" class="dropdown-item">@smn.MenuName</a>
+                                    string url1 = Functions.TitleSlugGeneration("list", smn.MenuName, smn.MenuID);
+                                    if (!string.IsNullOrEmpty(smn.Link))
+                                    {
+                                        url = smn.Link;
+                                    }
+                                    <a href="/@url1" class="dropdown-item">@smn.MenuName</a>
                                 }
 
                             </div>
