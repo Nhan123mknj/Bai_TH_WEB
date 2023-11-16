@@ -12,7 +12,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.11",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
-          "SlugGenerator": "2.0.2"
+          "SlugGenerator": "2.0.2",
+          "elFinder.NetCore": "1.3.6"
         },
         "runtime": {
           "startup.dll": {}
@@ -49,6 +50,18 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.7.0.0",
             "fileVersion": "1.700.22.46903"
+          }
+        }
+      },
+      "elFinder.NetCore/1.3.6": {
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0",
+          "System.Text.Json": "7.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/elFinder.NetCore.dll": {
+            "assemblyVersion": "1.3.6.0",
+            "fileVersion": "1.3.6.0"
           }
         }
       },
@@ -2668,6 +2681,13 @@
       "sha512": "sha512-eHEiCO/8+MfNc9nH5dVew/+FvxdaGrkRL4OMNwIz0W79+wtJyEoeRlXJ3SrXhoy9XR58geBYKmzMR83VO7bcAw==",
       "path": "azure.identity/1.7.0",
       "hashPath": "azure.identity.1.7.0.nupkg.sha512"
+    },
+    "elFinder.NetCore/1.3.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IRonnEAryYn8o7g8cwcHWFFDk652KOVC47Mn23HvOPxCyYbdJS9gQeE3UY4ZeQGe0yIqno/WWWw/OfMeL2nKSA==",
+      "path": "elfinder.netcore/1.3.6",
+      "hashPath": "elfinder.netcore.1.3.6.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",

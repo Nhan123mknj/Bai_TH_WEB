@@ -1,0 +1,25 @@
+﻿@Model startup.Models.Post
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h2>Chi tiết bài viết</h2>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text"><strong>Tóm tắt:</strong> @Model.Abstract</p>
+            <p class="card-text"><strong>Ngày tạo:</strong> @Model.CreatedDate</p>
+            <p class="card-text"><strong>Nội dung:</strong> @Html.Raw(Model.Contents)</p>
+            <p class="card-text"><strong>Ảnh:</strong> <img src="@Model.Images" alt="Hình ảnh" /></p>
+            <p class="card-text"><strong>Liên kết:</strong> @Model.Link</p>
+            <p class="card-text"><strong>Thứ tự:</strong> @Model.PostOrder</p>
+            <p class="card-text"><strong>Trạng thái:</strong> @Model.IsActive</p>
+            <a asp-action="Edit" asp-route-id="@Model.PostID" class="btn btn-primary">Chỉnh sửa</a>
+            <a asp-action="Delete" asp-route-id="@Model.PostID" class="btn btn-danger">Xóa</a>
+            <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+        </div>
+    </div>
+</main>

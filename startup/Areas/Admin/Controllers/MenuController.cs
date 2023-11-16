@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using startup.Models;
-
+using startup.Utilities;
 
 namespace startup.Areas.Admin.Controllers
 {
@@ -20,7 +20,7 @@ namespace startup.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            var mn = _context.Menu.Find(id);
+            var mn = _context.Menus.Find(id);
             if (mn == null)
             {
                 return NotFound();
@@ -31,12 +31,12 @@ namespace startup.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Delete(int id)
         {
-            var deleMenu = _context.Menu.Find(id);
+            var deleMenu = _context.Menus.Find(id);
             if (deleMenu == null)
             {
                 return NotFound();
             }
-            _context.Menu.Remove(deleMenu);
+            _context.Menus.Remove(deleMenu);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -46,7 +46,7 @@ namespace startup.Areas.Admin.Controllers
         // GET: Hiển thị form để tạo menu mới
         public IActionResult Create()
         {
-            var mnList = (from m in _context.Menu
+            var mnList = (from m in _context.Menus
                           select new SelectListItem()
                           {
                               Text = m.MenuName,
@@ -70,7 +70,7 @@ namespace startup.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 // Lưu menu vào cơ sở dữ liệu (ví dụ: sử dụng Entity Framework)
-                _context.Menu.Add(mn);
+                _context.Menus.Add(mn);
                 _context.SaveChanges();
                 return RedirectToAction("Index"); // Chuyển hướng sau khi thêm thành công
             }
@@ -85,12 +85,12 @@ namespace startup.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            var mn = _context.Menu.Find(id);
+            var mn = _context.Menus.Find(id);
             if (mn == null)
             {
                 return NotFound();
             }
-            var mnList = (from m in _context.Menu
+            var mnList = (from m in _context.Menus
                           select new SelectListItem()
                           {
                               Text = m.MenuName,
@@ -112,7 +112,7 @@ namespace startup.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 // Cập nhật dữ liệu menu trong cơ sở dữ liệu (sử dụng Entity Framework hoặc phương thức truy cập dữ liệu của bạn)
-                _context.Menu.Update(mn);
+                _context.Menus.Update(mn);
                 _context.SaveChanges();
                 return RedirectToAction("Index"); // Chuyển hướng đến trang danh sách menu
             }
@@ -122,9 +122,11 @@ namespace startup.Areas.Admin.Controllers
         //End Edit
         public IActionResult Index()
         {
-            var mnList = _context.Menu.OrderBy(m => m.MenuID).ToList();
+            var mnList = _context.Menus.OrderBy(m => m.MenuID).ToList();
 
-            
+            if (!Functions.IsLogin())
+                return RedirectToAction("Index", "Login");
+
             return View(mnList);
         }
     }

@@ -46,6 +46,22 @@
           }
         }
       },
+      "elFinder.NetCore/1.3.6": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.7.0",
+          "System.Text.Json": "4.7.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/elFinder.NetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/elFinder.NetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -3933,6 +3949,18 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "elFinder.NetCore/1.3.6": {
+      "sha512": "IRonnEAryYn8o7g8cwcHWFFDk652KOVC47Mn23HvOPxCyYbdJS9gQeE3UY4ZeQGe0yIqno/WWWw/OfMeL2nKSA==",
+      "type": "package",
+      "path": "elfinder.netcore/1.3.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "elfinder.netcore.1.3.6.nupkg.sha512",
+        "elfinder.netcore.nuspec",
+        "lib/netcoreapp3.1/elFinder.NetCore.dll"
       ]
     },
     "Humanizer/2.14.1": {
@@ -11131,7 +11159,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.11",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
-      "SlugGenerator >= 2.0.2"
+      "SlugGenerator >= 2.0.2",
+      "elFinder.NetCore >= 1.3.6"
     ]
   },
   "packageFolders": {
@@ -11194,6 +11223,10 @@
           "SlugGenerator": {
             "target": "Package",
             "version": "[2.0.2, )"
+          },
+          "elFinder.NetCore": {
+            "target": "Package",
+            "version": "[1.3.6, )"
           }
         },
         "imports": [

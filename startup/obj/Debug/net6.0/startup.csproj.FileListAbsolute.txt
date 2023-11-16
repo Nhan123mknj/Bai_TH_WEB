@@ -266,3 +266,5 @@ C:\Users\bonhe\source\repos\startup\startup\bin\Debug\net6.0\ru\Microsoft.CodeAn
 C:\Users\bonhe\source\repos\startup\startup\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\bonhe\source\repos\startup\startup\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\bonhe\source\repos\startup\startup\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\bonhe\source\repos\startup\startup\bin\Debug\net6.0\elFinder.NetCore.dll
+C:\Users\bonhe\source\repos\startup\startup\obj\Debug\net6.0\startup.MvcApplicationPartsAssemblyInfo.cs

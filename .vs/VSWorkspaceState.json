@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\startup",
+    "\\startup\\Areas",
+    "\\startup\\Areas\\Admin",
+    "\\startup\\Areas\\Admin\\Views",
+    "\\startup\\Areas\\Admin\\Views\\Login"
+  ],
+  "PreviewInSolutionExplorer": false
+}

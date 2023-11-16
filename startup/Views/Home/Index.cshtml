@@ -1,4 +1,7 @@
-﻿<div class="modal fade" id="searchModal" tabindex="-1">
+﻿
+
+
+<div class="modal fade" id="searchModal" tabindex="-1">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
             <div class="modal-header border-0">
@@ -498,3 +501,14 @@
         </div>
     </div>
 </div>
+<h1>JavaScript Example</h1>
+
+<p id="demo">Click the button to change this text.</p>
+
+<button onclick="changeText()">Click me</button>
+<script>
+    function changeText() {
+        var paragraph = document.getElementById("demo");
+        paragraph.innerHTML = "Text changed!";
+    }
+</script>

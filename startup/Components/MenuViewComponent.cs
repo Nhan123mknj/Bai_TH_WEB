@@ -13,7 +13,7 @@ namespace startup.Components
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var listofmenu =(from m in _Context.Menu
+            var listofmenu =(from m in _Context.Menus
                              where(m.IsActive==true)&&(m.Position==1)
                              select m).ToList();
             return await Task.FromResult((IViewComponentResult)View("Default",listofmenu));
